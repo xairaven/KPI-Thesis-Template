@@ -5,9 +5,11 @@
 %  - список файлів у chapters/ і appendices/, якщо додаєте/прибираєте
 %    розділи чи додатки (просто дописуйте чи коментуйте рядки \input).
 %
-% Що редагувати НЕ тут: усі особисті дані -- у config.tex.
+% Що редагувати НЕ тут: усі особисті дані -- у config.tex; додаткові
+% пакети й власні команди -- у preamble.tex (не в kpithesis.cls!).
 \documentclass[master]{kpithesis}
 
+\input{preamble.tex}
 \input{config.tex}
 
 \begin{document}
