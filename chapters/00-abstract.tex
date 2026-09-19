@@ -22,13 +22,32 @@
 
 \textbf{Практичне значення} -- \dots
 
-\bigskip
-\noindent\textbf{Ключові слова:} ключове слово 1, ключове слово 2,
-ключове слово 3.
+% ДСТУ 3008:2015, п. 4.3.8: ключові слова друкують ПРОПИСНИМИ
+% (великими) літерами -- на відміну від решти тексту реферату.
+% Жодних \bigskip тут не треба: звичайний абзацний відступ і
+% звичайний проміжок між абзацами вже відокремлюють цей рядок від
+% сусідніх настільки, наскільки потрібно (див. docs/ARCHITECTURE.md,
+% розділ про \baselineskip, чому зайвий \bigskip тут лише зіпсував би
+% рівномірність).
+\textbf{Ключові слова:} \MakeUppercase{ключове слово 1, ключове слово 2,
+ключове слово 3}.
 
-\bigskip
 \begin{english}
-  \textbf{Abstract}
+  % "ABSTRACT" оформлено як заголовок (великі літери, жирний,
+  % посередині), а не просто жирне слово в тексті -- щоб мати ту саму
+  % візуальну вагу, що й "РЕФЕРАТ" вище. Інакше він губиться поруч із
+  % повноцінним заголовком розділу.
+  %
+  % Свідомо НЕ \begin{center}...\end{center}: це оточення має власний
+  % умовчаний відступ (\topsep), не пов'язаний із \baselineskip, тому
+  % дає "некруглу" відстань (≈1,75 інтервала). \centering всередині
+  % групи { } так само центрує текст, але без цього зайвого відступу
+  % -- тоді відстань керується тільки нашим \vspace{1\baselineskip}
+  % (= рівно 2 інтервали з тих самих причин, що й у заголовків розділів
+  % -- див. docs/ARCHITECTURE.md).
+  \vspace{1\baselineskip}
+  {\centering\bfseries ABSTRACT\par}
+  \vspace{1\baselineskip}
 
   Explanatory note to the \dots: \pageref{LastPage}~p., \arabic{figure}~fig.,
   \arabic{table}~tables, 2~appendices, 00~references.
@@ -43,6 +62,5 @@
 
   \textbf{Practical value} -- \dots
 
-  \bigskip
-  \noindent\textbf{Keywords:} keyword one, keyword two, keyword three.
+  \textbf{Keywords:} \MakeUppercase{keyword one, keyword two, keyword three}.
 \end{english}
