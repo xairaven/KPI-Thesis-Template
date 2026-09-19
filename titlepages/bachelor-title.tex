@@ -1,0 +1,71 @@
+% titlepages/bachelor-title.tex -- титульна сторінка дипломного
+% проєкту/дипломної роботи бакалавра (Додаток 3 до "Рекомендацій до
+% структури та змісту кваліфікаційних робіт здобувачів ступеня
+% бакалавра та магістра", КПІ ім. Ігоря Сікорського, 2022).
+%
+% Цей файл не редагують напряму -- усі дані підставляються з
+% config.tex. Якщо потрібно змінити саме РОЗМІТКУ (а не дані),
+% редагуйте тут.
+\thispagestyle{empty}
+
+\begin{center}
+  Національний технічний університет України\\
+  «Київський політехнічний інститут імені Ігоря Сікорського»
+\end{center}
+
+\vspace{1em}
+\noindent\facultyName\\
+\departmentName
+
+\vspace{2em}
+\begin{flushright}
+  \begin{minipage}{7.5cm}
+    ДО ЗАХИСТУ ДОПУЩЕНО\\
+    Завідувач кафедри\\
+    \hrulefill\ \departmentHeadName\\
+    «\hrulefill»\hrulefill~\thesisYear~р.
+  \end{minipage}
+\end{flushright}
+
+\vspace{2em}
+\begin{center}
+  \workType\\
+  на здобуття ступеня бакалавра\\
+  за освітньо-професійною програмою «\programmeName»\\
+  спеціальності \specialtyCode~«\specialtyName»\\
+  на тему: «\thesisTitle»
+\end{center}
+
+\vspace{2em}
+\noindent Виконав(-ла):\\
+студент(-ка) \authorCourse~курсу, групи \authorGroup\\
+\authorFullName \hfill \hrulefill
+
+\medskip
+\noindent Керівник:\\
+\supervisorRegalia,\\
+\supervisorFullName \hfill \hrulefill
+
+\ifdefempty{\consultantFullName}{}{%
+  \medskip
+  \noindent Консультант з \consultantChapter:\\
+  \consultantRegalia,\\
+  \consultantFullName \hfill \hrulefill
+}
+
+\medskip
+\noindent Рецензент:\\
+\reviewerRegalia,\\
+\reviewerFullName \hfill \hrulefill
+
+\vspace{2em}
+\noindent Засвідчую, що у цій кваліфікаційній роботі немає
+запозичень з праць інших авторів без відповідних посилань.\\
+Студент (-ка) \hrulefill
+
+\vfill
+\begin{center}
+  Київ~--~\thesisYear
+\end{center}
+
+\clearpage

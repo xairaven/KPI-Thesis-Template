@@ -1,0 +1,77 @@
+% titlepages/master-title.tex -- титульна сторінка магістерської
+% дисертації (Додаток 6 до "Рекомендацій до структури та змісту
+% кваліфікаційних робіт здобувачів ступеня бакалавра та магістра",
+% КПІ ім. Ігоря Сікорського, 2022).
+%
+% Відмінності від бакалаврської (bachelor-title.tex): додається гриф
+% "На правах рукопису" з УДК зліва вгорі, керівника називають
+% "Науковий керівник", а тип освітньої програми (ОПП чи ОНП) береться
+% з config.tex (\programmeType), бо для магістра це не завжди ОПП.
+\thispagestyle{empty}
+
+\begin{center}
+  Національний технічний університет України\\
+  «Київський політехнічний інститут імені Ігоря Сікорського»
+\end{center}
+
+\vspace{1em}
+\noindent\facultyName\\
+\departmentName
+
+\vspace{2em}
+\noindent
+\begin{minipage}[t]{7.5cm}
+  «На правах рукопису»\\
+  УДК~\udcCode
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{7.5cm}
+  \raggedleft
+  ДО ЗАХИСТУ ДОПУЩЕНО\\
+  Завідувач кафедри\\
+  \hrulefill\ \departmentHeadName\\
+  «\hrulefill»\hrulefill~\thesisYear~р.
+\end{minipage}
+
+\vspace{2em}
+\begin{center}
+  Магістерська дисертація\\
+  на здобуття ступеня магістра\\
+  за \programmeType~програмою «\programmeName»\\
+  зі спеціальності \specialtyCode~«\specialtyName»\\
+  на тему: «\thesisTitle»
+\end{center}
+
+\vspace{2em}
+\noindent Виконав(-ла):\\
+студент(-ка) \authorCourse~курсу, групи \authorGroup\\
+\authorFullName \hfill \hrulefill
+
+\medskip
+\noindent Науковий керівник:\\
+\supervisorRegalia,\\
+\supervisorFullName \hfill \hrulefill
+
+\ifdefempty{\consultantFullName}{}{%
+  \medskip
+  \noindent Консультант з \consultantChapter:\\
+  \consultantRegalia,\\
+  \consultantFullName \hfill \hrulefill
+}
+
+\medskip
+\noindent Рецензент:\\
+\reviewerRegalia,\\
+\reviewerFullName \hfill \hrulefill
+
+\vspace{2em}
+\noindent Засвідчую, що у цій магістерській дисертації немає
+запозичень з праць інших авторів без відповідних посилань.\\
+Студент (-ка) \hrulefill
+
+\vfill
+\begin{center}
+  Київ~--~\thesisYear
+\end{center}
+
+\clearpage

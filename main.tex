@@ -1,0 +1,42 @@
+% main.tex -- головний файл вашої роботи.
+%
+% Що тут можна/варто редагувати:
+%  - опцію класу нижче: [master] чи [bachelor];
+%  - список файлів у chapters/ і appendices/, якщо додаєте/прибираєте
+%    розділи чи додатки (просто дописуйте чи коментуйте рядки \input).
+%
+% Що редагувати НЕ тут: усі особисті дані -- у config.tex.
+\documentclass[master]{kpithesis}
+
+\input{config.tex}
+
+\begin{document}
+
+% --- Вступна частина (ДСТУ 3008:2015, розділ 4) ---
+\kpithesisTitlePage
+\kpithesisTaskPage
+\input{chapters/00-abstract.tex}
+\tableofcontents
+\input{chapters/00-abbreviations.tex}
+% ^^^ якщо у роботі немає нестандартних скорочень -- закоментуйте
+% рядок вище.
+
+% --- Основна частина (ДСТУ 3008:2015, розділ 5) ---
+\input{chapters/01-intro.tex}
+\input{chapters/02-chapter-01.tex}
+\input{chapters/03-chapter-02.tex}
+\input{chapters/04-chapter-03.tex}
+\input{chapters/05-conclusions.tex}
+
+% --- Перелік посилань (ДСТУ 3008:2015, п. 5.5; ДСТУ 8302:2015) ---
+\kpithesisUnnumberedChapter{Перелік посилань}
+\printbibliography[heading=none]
+
+% --- Додатки ---
+% Порядок підключення визначає літеру додатка (перший файл -> "А",
+% другий -> "Б" і т.д.) -- не назва файлу.
+\input{appendices/a-appendix.tex}
+\input{appendices/b-appendix.tex}
+
+\label{LastPage}
+\end{document}

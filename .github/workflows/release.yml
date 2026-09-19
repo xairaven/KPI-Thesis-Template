@@ -1,0 +1,41 @@
+name: Release
+
+# Це ГОЛОВНИЙ workflow для студентів: коли в репозиторії з'являється
+# тег виду "v1.0", тут збирається чистий .zip шаблону (без службових
+# файлів на кшталт .git чи результатів компіляції) і додається як файл
+# до GitHub Release. Саме цей .zip студент і завантажує -- не PDF, а
+# початковий код шаблону, з яким він далі працюватиме сам (локально чи
+# в Overleaf).
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create template archive
+        run: |
+          mkdir -p dist
+          zip -r "dist/kpithesis-template-${GITHUB_REF_NAME}.zip" . \
+            -x ".git/*" \
+            -x ".github/*" \
+            -x "dev-resources/*" \
+            -x "dist/*" \
+            -x "*.pdf" -x "*.xdv" \
+            -x "*.aux" -x "*.log" -x "*.toc" -x "*.out" \
+            -x "*.bbl" -x "*.bbl-SAVE-ERROR" -x "*.bcf" -x "*.bcf-SAVE-ERROR" \
+            -x "*.blg" -x "*.run.xml" -x "*-blx.bib" \
+            -x "*.fls" -x "*.fdb_latexmk" -x "missfont.log"
+
+      - name: Publish release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
